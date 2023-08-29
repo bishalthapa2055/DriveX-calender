@@ -1,12 +1,20 @@
-
+import Login from "./pages/login"
+import { Routes, Route } from "react-router-dom"
+import Verify from "./pages/verify"
+import NotFound from "./pages/notfound/Notfound"
+import Instructor from "./pages/instructor-profile"
+import LandingPage from "./pages/instructor-profile/LandingPage"
 function App() {
 
   return (
     <>
-      
-      <p >
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path="/instructor/login" element={<Login />} />
+        <Route path="/instructor/verify" element={<Verify />} />
+        <Route path="/instructor/profile" element={< Instructor />} />
+        <Route path="/instructor" element={< LandingPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   )
 }
