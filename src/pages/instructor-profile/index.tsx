@@ -124,7 +124,7 @@ const Index = () => {
                                 flexDirection: 'column'
                             }}>
 
-                                <CancelIcon onClick={() => setSelectedImage(null)} sx={{
+                                <CancelIcon onClick={() => setSelectedImage('')} sx={{
                                     float: 'top'
                                 }}
 

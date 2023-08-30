@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const LoginUser = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
 
     const navigate = useNavigate();
@@ -15,13 +15,13 @@ const Login = () => {
             window.alert("Enter Phone Number")
         }
 
-        const res = await axios.post("http://localhost:5050/api/v1/auth/instructor/sendotp", {
+        const res = await axios.post("http://localhost:5050/api/v1/auth/user/sendotp", {
             phone_number: phoneNumber
         })
 
         window.alert(`Your Otp code is ${res.data.otp}`)
 
-        navigate('/instructor/verify', {
+        navigate('/user/verify', {
             replace: true,
         });
         localStorage.setItem("PhoneNumber", phoneNumber)
@@ -62,7 +62,7 @@ const Login = () => {
                 <h2>
                     Enter Phone Number to login
                 </h2>
-                <h2>Login As Instructor</h2>
+                <h2>Login As User</h2>
                 <TextField id="outlined-basic" label="Phone Number" variant="outlined" type='number' sx={{ width: "400px", mt: "20px" }}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                 />
@@ -77,4 +77,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default LoginUser
