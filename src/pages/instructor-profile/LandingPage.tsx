@@ -38,6 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:last-child td, &:last-child th': {
     border: 0,
   },
+  height: "80px"
 }));
 const LandingPage = () => {
 
@@ -101,42 +102,63 @@ const LandingPage = () => {
                   <TableRow>
                     <StyledTableCell>DATE \ DAY</StyledTableCell>
                     {
-                      availability.map((item) => (
-                        <>
-                          <StyledTableCell align="right">{item.day}</StyledTableCell>
-                          {/* <StyledTableCell align="right">Monday</StyledTableCell>
-                          <StyledTableCell align="right">Tuesday</StyledTableCell>
-                          <StyledTableCell align="right">Wednesday</StyledTableCell>
-                          <StyledTableCell align="right">Thursday</StyledTableCell>
-                        <StyledTableCell align="right">Saturday</StyledTableCell> */}
-                        </>
+                      // availability.map((item) => (
+                      <>
+                        <StyledTableCell align="right">Sunday</StyledTableCell>
+                        <StyledTableCell align="right">Monday</StyledTableCell>
+                        <StyledTableCell align="right">Tuesday</StyledTableCell>
+                        <StyledTableCell align="right">Wednesday</StyledTableCell>
+                        <StyledTableCell align="right">Thursday</StyledTableCell>
+                        <StyledTableCell align="right">Saturday</StyledTableCell>
+                      </>
 
-                      ))
+                      // ))
                     }
                     <StyledTableCell align="right">Operation</StyledTableCell>
                   </TableRow>
                 </TableHead>
 
 
-                <TableBody>
-                  {/* {availability.map((data) => ( */}
-                    <>
-                      <StyledTableRow 
-                      // key={data._id}
-                      >
-                        {/* <StyledTableCell component="th" scope="row">
-                          {data.day}
-                        </StyledTableCell> */}
-                        <StyledTableCell align="right">Sunday</StyledTableCell>
-                        <StyledTableCell align="right">Monday</StyledTableCell>
-                        <StyledTableCell align="right">Tuesday</StyledTableCell>
-                        <StyledTableCell align="right">Wednesday</StyledTableCell>
-                        <StyledTableCell align="right">Thursday</StyledTableCell>
+                {/* <TableBody> */}
 
-                      </StyledTableRow >
-                    </>
-                  {/* ))} */}
+
+                {/* <StyledTableRow >Sunday
+                      <StyledTableCell >date1</StyledTableCell>
+                      <StyledTableCell >date2</StyledTableCell>
+                      <StyledTableCell >date3</StyledTableCell>
+                      <StyledTableCell >date4</StyledTableCell>
+                      <StyledTableCell >date5</StyledTableCell>
+                      <StyledTableCell >date6</StyledTableCell>
+                    </StyledTableRow>
+                    <StyledTableRow >Monday
+                      
+                    </StyledTableRow>
+                    <StyledTableRow >Tuesday</StyledTableRow>
+                    <StyledTableRow >Wednesday</StyledTableRow>
+                    <StyledTableRow >Thursday</StyledTableRow>
+                    <StyledTableRow >Friday</StyledTableRow>
+                    <StyledTableRow >Saturday</StyledTableRow>
+                     */}
+
+
+                <TableBody>
+                  {/* {rows.map((row) => ( */}
+                  {
+                    availability.map((item) => (
+                      <StyledTableRow >
+
+                        <StyledTableCell component="th" scope="row">
+                          {item.day}
+
+                        </StyledTableCell>
+                      </StyledTableRow>
+                    ))
+                  }
+
+
                 </TableBody>
+
+
               </Table>
             </TableContainer>
           </>
